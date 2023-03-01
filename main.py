@@ -1,5 +1,5 @@
-import pygame # Импорт модуля пайгейм
-
+import pygame
+import random
 pygame.init()
 
 width = 1366
@@ -7,7 +7,7 @@ height = 768
 fps = 60
 gameName = 'First Project'
 
-screen = pygame.display.set_mode((width, height)) # Создание экрана с заданными размера
+screen = pygame.display.set_mode((width, height))
 
 BLACK = '#000000'
 WHITE = '#FFFFFF'
@@ -59,6 +59,9 @@ while run:
         speedX = -speedX
     if img_rect.right > width:
         speedX = -speedX
-
+    if img_rect.bottom >height :
+        img_rect.x = random.randint(100,width - 100)
+        img_rect.y = 100
+        #run = False
     pygame.display.update()
 pygame.quit()
